@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailers</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/Css/trailers-css.css">
+    <link rel="stylesheet" href="static/Css/lightslider.css">
+    
+    <!-- <link rel="stylesheet" href="loading.css">
+    <script src="loading.js"></script> -->
+    <script src="static/Js/JQuery3.3.1.js"></script>
+    <script src="static/Js/lightslider.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        header {
+            padding-top: 10px;
+            background: linear-gradient(to right, rgba(34, 31, 31, 1) 0%, rgba(34, 31, 31, 0.4) 100%)
+        }
+
+    </style>
+    <style>
+        .movies-box {
+            position: relative;
+            display: inline-block;
+        }
+        .movies-img {
+            position: relative;
+        }
+        .movie-trigger1 {
+            display: none;
+            position: absolute;
+            /* top: 0; */
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .movies-img:hover .movie-image1 {
+            display: none;
+        }
+        .movies-img:hover .movie-trigger1 {
+            display: block;
+        }
+        embed{
+            margin: 0;
+            position: relative;
+            top: 10px;
+        }
+    </style>
+    <style>
+        .item-a {
+    position: relative;
+}
+
+.latest-box {
+    position: relative;
+}
+
+
+.latest-b-img img {
+    width: 100%;
+    display: block;
+}
+
+.latest-b-img embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.latest-b-img:hover img {
+    display: none;
+}
+
+.latest-b-img:hover embed {
+    display: block;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container ">
+            <div class="navbar flex1">
+                <div class="logo">
+                    <img src="static/images/Trailers_logo.png" alt="">
+                </div>
+
+                <nav>
+                    <ul id="menuitem">
+                        <li><a href="home">HOME</a></li>
+                        <li><a href="Movies">MOVIES</a></li>
+                        <li><a href="Trailers">TRAILERS</a></li>
+                        <li><a href="Songs">SONGS</a></li>
+                        <li><a href="Stories">STORIES</a></li>
+                        <li><a href="News">NEWS</a></li>
+                        <li><a href="Games">GAMES</a></li>
+                    </ul>
+                </nav>
+                <span class="fa fa-bars" onclick="menutoggle()"></span>
+
+                <div class="subscribe flex">
+                    <i class="fas fa-search"></i>
+                    <i id="palybtn" class="fas fa-user"></i>
+                </div>
+            </div>
+    </header>
+    <section id="main">
+        <h1 class="showcase-heading">Showcase</h1>
+        <ul id="autoWidth" class="cs-hidden">
+            <li class="item-a">
+                <div class="showcase-box">
+                    <img src="static/images/Trailer_Posters/Kalki.jpg" alt="">
+                </div>
+            </li>
+            <li class="item-b">
+                <div class="showcase-box">
+                    <img src="static/images/Trailer_Posters/Maname.jpg" alt="">
+                </div>
+            </li>
+            <li class="item-c">
+                <div class="showcase-box">
+                    <img src="static/images/Trailer_Posters/Pushpa2.jpg" alt="">
+                </div>
+            </li>
+            <li class="item-d">
+                <div class="showcase-box">
+                    <img src="static/images/Trailer_Posters/Bhool_Bhulaiyaa.jpg" alt="">
+                </div>
+            </li>
+            <li class="item-e">
+                <div class="showcase-box">
+                    <img src="static/images/Trailer_Posters/Shaitaan.jpg" alt="">
+                </div>
+            </li>
+        </ul>
+
+    </section>
+
+    <section id="latest">
+        <h1 class="latest-heading">Latest Trailers</h1>
+        <ul id="autoWidth2" class="cs-hidden">
+            <li class="item-a">
+                <div class="latest-box">
+                    <div class="latest-b-img" >
+                        <embed src="https://www.youtube.com/embed/BfCIPsEGAS8" type=""></embed>
+                        <img src="static/images/Trailer_Posters/Kalki.jpg"  alt="">
+                    </div>
+                    <div class="latest-b-text">
+                        <strong>KALKI</strong>
+                        <p>Sci-fi Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-b">
+                <div class="latest-box">
+                    <div class="latest-b-img">
+                        <embed src="https://www.youtube.com/embed/lW7enw6mFxs" type=""></embed>
+                        <img src="static/images/Trailer_Posters/Fly me to moon.jpg" alt="">
+                    </div>
+                    <div class="latest-b-text">
+                        <strong>FLY ME TO MOON</strong>
+                        <p>Romantic Drama</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-c">
+                <div class="latest-box">
+                    <div class="latest-b-img">
+                        <embed src="https://www.youtube.com/embed/3uvfq4Cu8R8" type=""></embed>
+                        <img src="static/images/Trailer_Posters/Crew.jpg" alt="">
+                    </div>
+                    <div class="latest-b-text">
+                        <strong>CREW</strong>
+                        <p>Heist Comedy</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-d">
+                <div class="latest-box">
+                    <div class="latest-b-img">
+                        <embed src="https://www.youtube.com/embed/EmD87y0yq8w" type=""></embed>
+                        <img src="static/images/Trailer_Posters/Kill.jpg" alt="">
+                    </div>
+                    <div class="latest-b-text">
+                        <strong>KILL</strong>
+                        <p>Action</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-e">
+                <div class="latest-box">
+                    <div class="latest-b-img">
+                        <embed src="https://www.youtube.com/embed/73_1biulkYk" type=""></embed>
+                        <img src="static/images/Trailer_Posters/DW.jpg" alt="">
+                    </div>
+                    <div class="latest-b-text">
+                        <strong>DEADPOOL&WOLVERINE</strong>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Action</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-e">
+                <div class="latest-box">
+                    <div class="latest-b-img">
+                        <embed src="https://www.youtube.com/embed/STScKOUpXR8" type=""></embed>
+                        <img src="static/images/Trailer_Posters/Venom.jpg" alt="">
+                    </div>
+                    <div class="latest-b-text">
+                        <strong>VENOM</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-e">
+                <div class="latest-box">
+                    <div class="latest-b-img">
+                        <embed src="https://www.youtube.com/embed/wboGYls1Bns" type=""></embed>
+                        <img src="static/images/Trailer_Posters/Pushpa2.jpg" alt="">
+                    </div>
+                    <div class="latest-b-text">
+                        <strong>Pushpa 2</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-e">
+                <div class="latest-box">
+                    <div class="latest-b-img">
+                        <embed src="https://www.youtube.com/embed/qGb5aKEYR8Q" type=""></embed>
+                        <img src="static/images/Trailer_Posters/Munjya.jpg" alt="">
+                    </div>
+                    <div class="latest-b-text">
+                        <strong>Munjya</strong>
+                        <p>Horror Movie</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <div class="movies-heading">
+        <h1>Best of 2023</h1>
+    </div>
+    <section id="movies-list">
+        <div class="movies-box">
+            <div class="movies-img">
+                <div class="movie-trigger1">
+                    <embed src="https://www.youtube.com/embed/uYPbbksJxIg" type=""></embed>
+                </div>
+                <img  src="static/images/Trailer_Posters/Openheimer.jpeg"  alt="" >
+                
+            </div>
+            <a href="#">OPENHEIMER | HD Rip</a>
+        </div>
+        <div class="movies-box">
+            <div class="movies-img">
+                <div class="movie-trigger1">
+                    <embed src="https://www.youtube.com/embed/SzINZZ6iqxY" type=""></embed>
+                </div>
+                <img src="static/images/Trailer_Posters/Beepkeeper.jpg" alt="">
+            </div>
+            <a href="#">THE BEEPKEEPER | HD Rip</a>
+        </div>
+        <div class="movies-box">
+            <div class="movies-img">
+                <div class="movie-trigger1">
+                    <embed src="https://www.youtube.com/embed/IHQQK_Wn5DM" type=""></embed>
+                </div>
+                <img src="static/images/Trailer_Posters/Chandu Champion.jpg" alt="">
+            </div>
+            <a href="#">CHANDU CHAMPION | HD Rip</a>
+        </div>
+        <div class="movies-box">
+            <div class="movies-img">
+                <div class="movie-trigger1">
+                    <embed src="https://www.youtube.com/embed/3AuB8RTfBJc" type=""></embed>
+                </div>
+                <img src="static/images/Trailer_Posters/Yodha.jpg" alt="">
+            </div>
+            <a href="#">YODHA | HD Rip</a>
+        </div>
+        <div class="movies-box">
+            <div class="movies-img">
+                <div class="movie-trigger1">
+                    <embed src="https://www.youtube.com/embed/BcDK7lkzzsU" type=""></embed>
+                </div>
+                <img src="static/images/Trailer_Posters/Smile.jpg" alt="">
+            </div>
+            <a href="#">SMILE | HD Rip</a>
+        </div>
+        <div class="movies-box">
+            <div class="movies-img">
+                <div class="movie-trigger1">
+                    <embed src="https://www.youtube.com/embed/g9PWmy1V1a4" type=""></embed>
+                </div>
+                <img src="static/images/Trailer_Posters/Iron Man 4.jpg" alt="">
+            </div>
+            <a href="#">IRON MAN 4 | HD Rip</a>
+        </div>
+        <div class="movies-box">
+            <div class="movies-img">
+                <div class="movie-trigger1">
+                    <embed src="https://www.youtube.com/embed/__xJ_kiZf84" type=""></embed>
+                </div>
+                <img src="static/images/Trailer_Posters/Haromhara.jpg" alt="">
+            </div>
+            <a href="#">HAROMHARA | HD Rip</a>
+        </div>
+        <div class="movies-box">
+            <div class="movies-img">
+                <div class="movie-trigger1">
+                    <embed src="https://www.youtube.com/embed/4GPvYMKtrtI" type=""></embed>
+                </div>
+                <img src="static/images/Trailer_Posters/Salaar.jpeg" alt="">
+            </div>
+            <a href="#">SALAAR PART-1 | HD Rip</a>
+        </div>
+    </section>
+
+    <div class="btns">
+        <a href="#">Previous</a>
+        <a href="#">Next</a>
+    </div>
+    <footer>
+        <p>Movies Website</p>
+        <p>Copyright-2024</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('#autoWidth,#autoWidth2').lightSlider({
+                autoWidth: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+                }
+            });
+        });
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="movies_js.js"></script>
+    <div class="loader"></div>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: false,
+                responsive: {
+                    411: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+        });
+
+        // Function to play YouTube video
+        function playYouTubeVideo(videoId) {
+            var modal = document.getElementById("myModal");
+            var iframe = document.getElementById("youtubePlayer");
+            iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+            modal.style.display = "block";
+        }
+
+        // Close the modal and stop video when close button is clicked
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () {
+            var modal = document.getElementById("myModal");
+            var iframe = document.getElementById("youtubePlayer");
+            modal.style.display = "none";
+            iframe.src = "";
+        }
+
+        // Close the modal and stop video when clicking outside the modal
+        window.onclick = function (event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                var iframe = document.getElementById("youtubePlayer");
+                modal.style.display = "none";
+                iframe.src = "";
+            }
+        }
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("image");
+        var span = document.getElementsByClassName("close")[0];
+        var iframe = document.getElementById("youtubeVideo");
+
+        img.onclick = function() {
+           modal.style.display = "block";
+           iframe.src = "https://www.youtube.com/embed/your-video-id?autoplay=1";
+        }
+
+        span.onclick = function() {
+           modal.style.display = "none";
+           iframe.src = "";
+        }
+
+        window.onclick = function(event) {
+           if (event.target == modal) {
+             modal.style.display = "none";
+             iframe.src = "";
+            }
+        }
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: false,
+            responsive: {
+                411: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

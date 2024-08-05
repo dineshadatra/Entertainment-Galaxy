@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment Galaxy</title>
+    <link rel="icon" type="image/x-icon" href="icon1.jpg">
+    <link rel="stylesheet" href="static/Css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/bootstrap-icons.svg"></script> -->
+     <!-- Option 1: Include in HTML -->
+
+    <!-- <link rel="stylesheet" href="loading/loading.css">
+    <script src="loading/loading.js"></script> -->
+    <style>
+        /* Option 2: Import via CSS */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+        .part2 a {
+            text-decoration: none;
+            color: black;
+        }
+
+        body {
+            color: #fcb900;
+            background-color: black;
+        }
+
+        .section1bottom h3 {
+            color: #fcb900;
+        }
+
+        .center-part1 p {
+            color: white;
+        }
+        i{
+            font-size: 30px;
+            position: relative;
+            bottom: 9px;
+        }
+        .user-pic{
+            width: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 30px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+            top: 50px;
+        }
+
+        .dropdown-content p {
+            margin: 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content button {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #ddd;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <section class="section1">
+        <nav>
+            <h1>ENTERTAINMENT GALAXY</h1>
+            <div class="part2">
+                <a href="Movies">
+                    <h4>MOVIES</h4>
+                </a>
+                <a href="Trailers">
+                    <h4>TRAILERS</h4>
+                </a>
+                <a href="Stories">
+                    <h4>STORIES</h4>
+                </a>
+                <a href="Songs">
+                    <h4>SONGS</h4>
+                </a>
+                <a href="Games">
+                    <h4>GAMES</h4>
+                </a>
+                <a href="News">
+                    <h4>NEWS</h4>
+                </a>
+                <img src="static/Profile_logo.jpg" class="user-pic" alt="Profile Image" class="profile-img" id="profile-img"> 
+                <div class="dropdown-content" id="dropdown-content">
+                    <p>{{ user.username }}</p>
+                    <form method="POST" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </div> 
+                
+            </div>
+        </nav>
+
+        <div class="center">
+            <div class="center-part1 typing-container">
+                <div id="typing-text" class="typing-animation"></div>
+                <p>Welcome to Entertainment Hub! Your ultimate destination for all things entertainment.
+                    Dive into a world of movies, trailers, captivating stories, the latest songs, and thrilling games.
+                    Whether you're looking to catch up on the latest blockbusters, discover new music, enjoy engaging
+                    narratives, or play exciting games,
+                    Entertainment Hub has it all. Explore and enjoy endless entertainment right at your fingertips!</p>
+            </div>
+            <div class="center-part2">
+                <img class="image1" src="static/images/Movie.jpeg" alt="Entertainment Image 1">
+                <img class="image2" src="static/images/Story.jpeg" alt="">
+                <img class="image3" src="static/images/Trailer.jpeg" alt="">
+                <img class="image4" src="static/images/Songs.jpeg" alt="">
+                <img class="image5" src="static/images/Games.jpeg" alt="">
+                <img class="image6" src="static/images/News.jpeg" alt="">
+            </div>
+        </div>
+        <div class="section1bottom">
+            <h3 class="hover-trigger1">MOVIES</h3>
+            <h3 class="hover-trigger2">STORIES</h3>
+            <h3 class="hover-trigger3">TRAILERS</h3>
+            <h3 class="hover-trigger4">SONGS</h3>
+            <h3 class="hover-trigger5">GAMES</h3>
+            <h3 class="hover-trigger6">NEWS</h3>
+        </div>
+    </section>
+
+    <section class="section2">
+        <div class="services">
+            <p>Discover a Universe of Entertainment
+
+                At Entertainment Hub, we believe in delivering a comprehensive entertainment experience tailored just
+                for you. Here's what you can explore:
+
+                Movies
+                Stay updated with the latest releases and timeless classics. Our extensive movie library offers
+                something for every taste, from action-packed adventures to heartwarming dramas and everything in
+                between.
+
+                Trailers
+                Catch a glimpse of upcoming films and decide what to watch next. Our curated selection of trailers
+                ensures you never miss out on the hottest new releases.
+
+                Stories
+                Dive into captivating stories that will transport you to different worlds. From short stories to
+                serialized fiction, our collection is perfect for book lovers and casual readers alike.
+
+                Songs
+                Tune into the latest hits and timeless melodies. Discover new artists, listen to curated playlists, and
+                enjoy your favorite genres all in one place.
+
+                Games
+                Unwind with a variety of games that cater to all ages and preferences. Whether you're into action,
+                strategy, puzzles, or casual gaming, our diverse selection has something for everyone.
+
+                Join us at Entertainment Hub and make every moment an adventure. Your entertainment journey starts
+                here!.</p>
+        </div>
+
+        <div class="container">
+            <div class="elem">
+                <div class="elem-part1">
+                    <h3>Movies</h3>
+                </div>
+                <div class="elem-part2">
+                    <img src="static/images/img/Movie.png" alt="Movies">
+                </div>
+            </div>
+
+            <div class="elem">
+                <div class="elem-part1">
+                    <h3>Stories</h3>
+                </div>
+                <div class="elem-part2">
+                    <img src="static/images/img/Stories.png" alt="Stories">
+                </div>
+            </div>
+
+            <div class="elem">
+                <div class="elem-part1">
+                    <h3>Songs</h3>
+                </div>
+                <div class="elem-part2">
+                    <img src="static/images/img/Songs.png" alt="Songs">
+                </div>
+            </div>
+
+            <div class="elem">
+                <div class="elem-part1">
+                    <h3>Trailers</h3>
+                </div>
+                <div class="elem-part2">
+                    <img src="static/images/img/Trailers.png" alt="Trailers">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="elem">
+                <div class="elem-part1">
+                    <h3>Games</h3>
+                </div>
+                <div class="elem-part2">
+                    <img src="static/images/img/Games.png" alt="Movies">
+                </div>
+            </div>
+
+            <div class="elem">
+                <div class="elem-part1">
+                    <h3>News</h3>
+                </div>
+                <div class="elem-part2">
+                    <img src="static/images/img/News.png" alt="Stories">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="loader"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+        const profileImg = document.getElementById('profile-img');
+        const dropdownContent = document.getElementById('dropdown-content');
+    
+        profileImg.addEventListener('click', function () {
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+    
+        window.addEventListener('click', function (event) {
+            if (event.target !== profileImg) {
+                dropdownContent.style.display = 'none';
+            }
+        });
+    });
+    </script>
+
+    <script src="static/Js/script.js"></script>
+</body>
+
+</html>

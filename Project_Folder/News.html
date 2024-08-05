@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" integrity="sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>News Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color:black;
+    font-family: Poppins;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    overflow-y: overlay;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 100px;
+}
+.topHeadlines .right .topNews::-webkit-scrollbar{
+    width: 6px;
+}
+.topHeadlines .right .topNews::-webkit-scrollbar-thumb{
+    background-color:black;
+}
+
+
+.header{
+    position: fixed;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+	height: 50px;
+    padding: 20px 50px;
+    background-color:rgb(58, 72, 126);
+    transition: 0.3s;
+}
+.header.sticky{
+    padding-block: 10px;
+    box-shadow: inset 0 -1.5px 3px rgba(255,255,255,0.3);
+}
+.logo{
+    font-size: 45px;
+    font-weight:700;
+    cursor: pointer;
+}
+nav ul{
+    display: flex;
+}
+nav div.bar{
+    display: none;
+    position: absolute;
+    right: 80px;
+    margin-top: -10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+nav div.bar.active .open{
+    display: none;
+}
+nav div.bar .close{
+    display: none;
+}
+nav div.bar.active .close{
+    display: initial;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 15px;
+    padding: 0 10px;
+    border-left: 1px solid #fff0;
+    border-right: 1px solid #fff0;
+    transition: 0.3s;
+}
+nav ul li:hover{
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.img{
+    margin-top:90px ;
+    width: 250px;
+    height: 100px;
+}
+.h1{
+    text-decoration: underline;
+}
+
+.card-1 {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    align-items: center; /* Aligns items vertically */
+    padding: 20px; /* Optional padding */
+}
+
+.cards{
+    width: 18%; /* Adjust width as needed */
+    padding: 20px;
+    background-color: black;
+    text-align: center;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.imgp1{
+    align-items: center;
+    margin-left: 250px;
+}
+.h3{
+    margin-left: 150px;
+}
+.page2 .news{
+    padding: 40px 0;
+    border-bottom: 1px solid #555;
+}
+.page2 .news:last-child{
+    padding: 30px 0;
+    border-bottom: none;
+}
+.page2 .news > .title h2{
+    font-size: 40px;
+    cursor: pointer;
+    display: inline;
+}
+.page2 .news > .title h2:hover{
+    text-decoration: underline;
+}
+.page2 .news .newsBox{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+}
+.page2 .news .newsBox .newsCard{
+    width: calc(100% / 5 - 20px); /*20px is the margin given to each card*/
+    margin: 10px;
+    float: left;
+}
+.page2 .news .newsBox .newsCard .img{
+    width: 100%;
+    height: 150px;
+    background-color: #a04;
+    border-radius: 5px;
+    float: left;
+}
+.page2 .news .newsBox .newsCard .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.page2 .news .newsBox .newsCard .text{
+    padding: 10px;
+    text-decoration: underline;
+    float: left;
+}
+.page2 .news .newsBox .newsCard .text .title a{
+    text-decoration: none;
+}
+.page2 .news .newsBox .newsCard .text .title a p{
+    font-size: 15px;
+    color: white;
+    display: inline;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.page2 .news .newsBox .newsCard .title a p:hover{
+    text-decoration: underline;
+}
+
+
+.footer{
+    width: 100%;
+    padding: 50px 50px 0px;
+    background-color:black;
+    min-height: 200px;
+}
+.footer .box{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+}
+.footer .box .left{
+    display: flex;
+    justify-content: space-around;
+    padding-right: 20px;
+}
+.footer .box .left .categories > p {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.footer .box .left .categories div{
+    margin-bottom: 15px;
+    width: max-content;
+}
+.footer .box .left .categories div p{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 0 10px;
+    border-left: 1px solid #fff0;
+    border-right: 1px solid #fff0;
+    transition: 0.3s;
+}
+.footer .box .left .categories div p:hover{
+    color: #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+.footer .contact{
+    margin-left: 10px;
+}
+.footer .contact p{
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.footer .contact div{
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+.footer .icon{
+    margin-top: 20px;
+    padding: 20px;
+}
+.footer .icon i{
+    font-size: 25px;
+    margin-right: 20px;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.footer .icon i:hover{
+    color: #fff;
+    transform: scale(1.2);
+}
+.footer .newsletter p{
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.footer .newsletter .email{
+    display: flex;
+}
+.footer .newsletter .email input{
+    width: 400px;
+    padding: 12px 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-right: 20px;
+}
+.footer .newsletter .email button{
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: transparent;
+    border-color: #fff;
+    border-style: solid;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.footer .newsletter .email button:hover{
+    color: #0a0a18;
+    background-color: #fff;
+}
+.footer .copyrights{
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 1px;
+}
+
+@media (max-width:1024px) {
+    .topHeadlines .right .topNews .news .img {
+        width: 150px;
+    }
+    .topHeadlines .right .topNews .news .text .title a p {
+        font-size: 14px;
+    }
+    .page2 .news .newsBox .newsCard .img {
+        height: 120px;
+    }
+    .page2 .news .newsBox .newsCard .text {
+        padding: 5px;
+    }
+    .page2 .news .newsBox .newsCard .text .title a p {
+        font-size: 14px;
+    }
+    .footer .box .left .categories > p {
+        font-size: 25px;
+    }
+    .footer .contact p {
+        font-size: 25px;
+    }
+    .footer .newsletter p {
+        font-size: 25px;
+    }
+    .footer .newsletter .email input {
+        width: 300px;
+    }
+    .footer .newsletter .email button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .footer .box .left .categories div p {
+        font-size: 18px;
+    }
+    .footer .contact div {
+        font-size: 15px;
+    }
+}
+@media (max-width:768px) {
+    nav div.bar{
+        display: block;
+    }
+    nav ul {
+        opacity: 0;
+        position: absolute;
+        background-color: #0b0b11;
+        flex-direction: column;
+        right: 0px;
+        padding: 30px 30px 10px;
+        text-align: center;
+        pointer-events: none;
+        border-radius: 10px;
+    }
+    nav ul.activeMenu {
+        opacity: 1;
+        pointer-events: all;
+    }
+    nav ul li{
+        margin: 10px 0;
+    }
+    .topHeadlines {
+        display: block;
+    }
+    .topHeadlines .right .topNews .news .img {
+        width: 220px;
+    }
+    .topHeadlines .right .topNews .news .text .title a p {
+        font-size: 18px;
+    }
+    .page2 .news .newsBox .newsCard {
+        width: calc(100% / 3 - 20px);
+    }
+    .footer .box {
+        grid-template-columns: none;
+    }
+    .footer .box .right{
+        grid-row-start: 1;
+        margin-bottom: 40px;
+    }
+    .footer .newsletter .email input {
+        width: 400px;
+    }
+    .footer .box .left {
+        justify-content: space-between;
+    }
+}
+@media (max-width:600px) {
+    .logo {
+        font-size: 35px;
+    }
+    .topHeadlines .left {
+        padding: 10px 0px;
+    }
+    .topHeadlines .right .topNews .news .img {
+        width: 150px;
+    }
+    .topHeadlines .right .topNews .news .text .title a p {
+        font-size: 14px;
+    }
+    .page2 .news .newsBox .newsCard {
+        width: calc(100% / 2 - 20px);
+    }
+    .footer .newsletter .email input {
+        width: 300px;
+        font-size: 14px;
+    }
+    .footer .newsletter .email button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    .footer .newsletter p {
+        font-size: 22px;
+    }
+    .footer .box .left .categories > p {
+        font-size: 22px;
+    }
+    .footer .contact p {
+        font-size: 22px;
+    }
+    .footer .copyrights {
+        font-size: 14px;
+    }
+}
+@media (max-width:425px) {
+    nav div.bar {
+        right: 50px;
+    }
+    nav ul {
+        padding: 30px 10px 10px;
+    }
+    nav ul li {
+        margin: 5px 0px;
+    }
+    nav ul li a {
+        font-size: 14px;
+    }
+    .topHeadlines {
+        padding: 100px 20px 50px;
+    }
+    .page2 {
+        padding: 50px 20px;
+    }
+    .page2 .news .newsBox .newsCard {
+        width: 100%;
+        display: grid;
+    }
+    .page2 .news > .title h2 {
+        font-size: 30px;
+    }
+    .page2 .news .newsBox .newsCard .img{
+        height: 100%;
+        min-height: 150px;
+    }
+    .page2 .news .newsBox .newsCard .text .title a p {
+        font-size: 16px;
+    }
+    .footer .newsletter .email {
+        display: block;
+    }
+    .footer .newsletter .email button {
+        margin-top: 15px;
+    }
+    
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures cards wrap to the next line if there isn't enough space */
+    gap: 4px; /* Adjust the spacing between cards */
+  }
+  
+  .card {
+    
+/* Flex properties: grow, shrink, basis */
+    background-color:black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+    </style>
+    
+<div>
+    <div class="header">
+        <div class="logo">
+            NEWS
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="#politicalnews">politics</a></li>
+                <li><a href="#sportsNews">Sports</a></li>
+                <li><a href="#businessNews">Business</a></li>
+                <li><a href="#techNews">Technology</a></li>
+            </ul>
+            <div class="bar">
+                <i class="open fa-solid fa-bars-staggered"></i>
+                <i class="close fa-solid fa-xmark"></i>
+            </div>
+        </nav>
+</div>
+
+<div class="card-1">
+   
+    <div class="cards"><img src="static/images/imgp.jpeg" class="img"> 
+        <h1 class="h1"><a href="#politicalnews">Politics</a>
+        </h1>
+        <p>Amid desk thumping, PM Modi introduces council of ministers in Rajya Sabha</p></div>
+    <div class="cards"><img src="static/images/img6.webp" class="img">
+        <h1 class="h1" ><a href="#sportsNews">Sports</a></h1>
+        <p>T20 world cup final: History beckons South Africa, India wish to erase recent history to lift a world cup</p></div>
+    <div class="cards"><img src="static/images/imgB.jpeg" class="img">
+        <h1 class="h1"><a href="#businessNews">Business</a></h1>
+        <p>INSIDE INDIA:<br>
+            India’s major bond market milestone could prove to be a double-edged ...... 
+            </p></div>
+    <div class="cards"><img src="static/images/img1.jpeg" class="img">
+        <h1 class=" h1"><a href="#techNews">Technology</a></h1>
+        <p>Technology News — The San Antonio Report is a nonprofit, ...
+        </p></div>
+
+</div>
+<div>
+    
+</div>
+<div class="page2">
+    <div class="news" id="politicalnews">
+    <div class="title">
+                <h2>Political</h2>
+                <div class="card-container">
+                <div class="card">
+                  <img src="static/images/imgp1.jpeg" class="imgp1">
+                  <h3 class="h3"> Govt-scripted speech full of lies: Oppn leaders on Prez's address in House
+                    They said there is an "undeclared emergency" in the co</h3>
+                <p>Opposition leaders on Thursday dismissed the President's address to the joint sitting of Parliament as a "script given by the government" that was "full of lies" and also castigated the government over the repeated mention of the 1975 Emergency.
+                    They said there is an "undeclared emergency" in the country and the Constitution is being attacked under the Modi government
+                    In her address, President Droupadi Murmu described the imposition of Emergency in 1975 as the "biggest and darkest chapter" of a direct attack on the Constitution and said the country emerged victorious over unconstitutional forces.
+                    Speaking to reporters after the President's address, Samajwadi Party president Akhilesh Yadav punched holes in the government's claim of India being the fifth-largest economy in the world.
+                    "The story that is being told about India becoming the fifth-largest economy... has it made our farmers prosperous? If we are the fifth-largest economy, then why are so many youths unemployed? Why is there a scheme like Agniveer? Why can't price rise be controlled?" he said.
+                    On the government's claims about investment, the SP chief said, "We would have witnessed more growth if there was investment. The growth of some individuals cannot enable national growth. It can improve our numbers but what is there in it for farmers, the poor and those who have been most exploited."
+                    Asked about the mention of Emergency by Murmu, he said, "What did the BJP do for the people who were in jail during Emergency? The SP gave them respect and pensions."
+                    Trinamool Congress MP Mahua Moitra said the President read out a "script given by the government" and that the BJP has not realised yet that it does not have a majority on its own.
+                    
+                    Droupadi Murmu, Murmu, President
+                    Reforms in armed forces necessary to maintain supremacy during wars: Murmu
+                    DK Shivakumar,shivakumar
+                    DK Shivakumar mocks demand for 3 more deputy chief ministers in Karnataka
+                    MK Stalin, Stalin
+                    Tamil Nadu govt to establish international airport in Hosur: CM MK Stalin
+                    President Droupadi Murmu addresses during the launch of the first indigenous CAR-T cell therapy, in Mumbai, Thursday, April 4, 2024. (PTI Photo)
+                    Justice will be priority not punishment: Prez Murmu on new criminal laws
+                    "The government's problem is that they are not yet able to understand that they have come to 240 from 303. They prepared the speech based on the majority of 303. That is why she said there is a clear majority government when the government is actually in minority," she said.
+                    Maybe they took portions from the last year's speech, she said.
+                    Speaking about the recent general elections, Murmu said the whole world is talking about India's Lok Sabha polls.
+                    "The world is witnessing that the people of India have elected a stable government with clear majority for a third consecutive term," she told the joint sitting of the two Houses of Parliament.
+                    CPI (Marxist-Leninist) Liberation MP Sudama Prasad said the President's address was "full of lies".
+                    
+                    "This is an alliance government which they are calling a majority government as if it is a BJP government. They should have talked about Manipur. Why are they making empty speeches on women empowerment? Women were paraded naked there (Manipur), people have been rendered homeless... women wrestlers have not yet received justice. This address was full of lies," he said.
+                    On the President talking about Emergency, Prasad said, "That was a declared emergency and this one has not been declared."
+                    "They mentioned Emergency yesterday as well. This is not right. They are mentioning Emergency but we are facing a mega-emergency at present. The Constitution is being attacked, democratic values are being murdered and people are being silenced. By talking about Emergency, they are trying to hide their own mega-emergency," he added.
+                    
+                    Congress leader Tariq Anwar said there was nothing new in the President's speech.
+                    "They just made a few changes to old speeches. There was nothing new in the President's address to Parliament today," he said.
+                    "Several elections have been held since Emergency in which the BJP was defeated. They have nothing new to say," Anwar said.
+                    Prime Minister Narendra Modi and Lok Sabha Speaker Om Birla have also condemned the imposition of Emergency.
+                    Addressing the media in the Parliament complex ahead of the start of the first session of the 18th Lok Sabha on June 24, Modi had termed Emergency a black spot on India's parliamentary history when the Constitution was discarded and the country turned into a prison.
+                    </p>
+                </div>
+    
+                <div class="card-container">
+                    <div class="cards">
+                        <img src="static/images/imgp2.avif">
+                        <p>IReforms in armed forces necessary to maintain supremacy during wars: Murmu
+
+                            </p>
+                    </div>
+                    <div class="cards">
+                        <img src="static/images/imgp3.webp">
+                        <p>DK Shivakumar mocks demand for 3 more deputy chief ministers in Karnataka
+                            </p>
+                    </div>
+                    <div class="cards">
+                        <img src="static/images/imgp4.webp">
+                        <p>Tamil Nadu govt to establish international airport in Hosur: CM MK Stalin
+                            </p>
+                    </div>
+                    <div class="cards">
+                        <img src="static/images/imgp5.webp">
+                        <p>Uttar Pradesh Lok Sabha election results: What worked in favour of INDIA?
+
+                            </p>
+                    </div>
+                    <div class="cards">
+                        <img src="static/images/imgp6.avif">
+                        <p>End of 'negative' politics: SP chief Akhilesh Yadav on LS poll results
+                            </p>
+                    </div>
+                </div>
+           
+                </div>
+        </div>
+    </div>
+
+    <div class="news" id="sportsNews">
+    <div class="title">
+               <h2>Sports</h2>
+            <div class="card-container">
+            <div class="card">
+              <img src="static/images/img3.avif">
+              <h3> IND vs AUS:</h3>
+              <p>
+                Rohit Sharma scores 92 in Super 8, T20 World<br> Cup 2024
+                Quick comment: When Rohit Sharma <br>smashed Mitchell Starc for four sixesin an over<br> in the T20 World Cup
+                JUNE 24, 2024 21:15 IST<br>
+                Rohit was scratchy in the first over<br>. But as Starc ran in for his second over,<br> the Indian skipper teed off.</p>
+            </div>
+
+            <div class="card">
+              <img src="static/images/img5.avif">
+              <h3></h3>
+              <p>India squad for Zimbabwe series announced: <br>Shubman Gill named captain, SRH’s Abhishek <br>Sharma and RR’s Riyan Parag among debutant</p>
+            </div>
+
+            <div class="card">
+              <img src="static/images/img4.webp" alt="">
+              <h3>PV Sindhu top 20. </h3>
+              <p1>PV Sindhu Among Top Paid Female <br>Athletes Of 2023, Equals Simone Biles<br> WithEarning Of...
+                NDTV Sports Desk | <br>Friday December 22, 2023
+                The list <br>is dominated by tennis stars, with PV Sindhu <br>the only Indian inside the top 20.</p1>
+            </div>
+             
+            <div class="card">
+              <img src="static/images/img6.webp" alt="">
+              <h3>ICCI Mens  T20 world cup</h3>
+              <p>India vs Australia: How Jasprit Bumrah, Arshdeep Singh can take<br> a hintfrom Travis Head’s recent troubles IND vs AUS,T20 World<br>  Cup: Australia opener Travis Head could be a key differentiator <br> as his side aims to make the semifinal after beating India in  their<br>  Super 8 clash at the Daren Sammy National Stadium  St Lucia on<br>  Monday.
+              </p>
+            </div>
+          
+            <div class="card">
+                <img src="static/images/img7.webp" alt="">
+                <h3>Bowled by Jofra Archer: </h3>
+                <p>Here are a few instances:
+                Bowled by Naveen-ul-Haq: The ball <br> from the right-hander around the stumps swung into him. Head<br>  shaped for the waft over the bowler’s head.  But he could not reach <br> the pitch of the ball; more crucially he did not account for the marginal <br>away seam movement. A combination of both beat his swipe.</p>
+            </div>     
+            </div>  
+    
+    <div class="newsBox">
+    </div>
+    </div>
+    </div>
+    
+
+    <div class="news" id="businessNews">
+     <div class="title">
+            <h2>Business</h2>
+            <div class="card-container">
+
+                <div class="card">
+                    <img src="static/images/img8.webp">
+                  <h3>Company Stock</h3>
+                  <p>
+                    Indus Towers, Vodafone Idea & Airtel shares climb<br> up to 3% from day's lows; here's why The Centre will <br>put airwaves worth Rs 96,317.65 crore on sale as it <br>begins this year's spectrum auction.Antique Stock Broking
+                  </p>
+                </div>
+                
+                <div class="card">
+                    <img src="static/images/img10.webp">
+                    <h3></h3>
+                    <p>European Stocks Struggle for Direction Ahead of French Election<br>European stocks were treading water on Monday, with <br>French elections set for the weekend — an event that’s left investors<br> in a world of uncertainty.
+                    2 MIN READ12:15 AM IST</p>
+                </div>
+                 
+                <div class="card">
+                    <img src="static/images/img9.jpg">
+                    <h3></h3>
+                    <p>Only 195 out of the 31515 ongoing real estate projects<br> have  ..
+                    Of the more than 31515 ongoing real estate projects<br>Read more at:
+                    http://timesofindia.indiatimes.com/
+                    article<br>show/111239337.cms?utm_source=contentofinterest&utm<br>_medium=text&utm_campaign=cppst</p>
+                </div>
+
+                <div class="card">
+                    <img src="static/images/img10.avif">
+                    <p>Closing Bell: Sensex gains<br> 131 pts, Nifty above <br>23,500; autos gain</p>
+                </div>
+
+                <div class="card">
+                    <img src="static/images/img11.webp">
+                    <h1></h1>
+                    <p1>Gold Rate Today: Price <br>of 22 carat, 24 <br>carat gold increases<br>
+                    Mumbai: The price of <br>gold in Mumbai today is <br>Rs 6,715 per gram for <br>22 karat gold and Rs 7,<br>325 per gram for 24 karat<br> gold.
+                    Chennai:The price<br> of gold in Chennai today is<br> Rs 6,725 per gram for 22 <br>karat gold and Rs 7,336 per <br>gram for 24 karat gold.</p1>
+                </div>
+              
+                
+            <div class="card">
+                <img src="static/images/img12.jpeg">
+                <p>Closing Bell: <br>Sensex gains<br> 131 pts, Nifty <br>above 23,500; <br>autos gain</p>
+            </div> 
+            
+        </div>
+        <div class="newsBox">
+        </div>
+    </div>
+    </div>  
+
+    <div class="news" id="techNews">
+    <div class="title">
+            <h2>Technology</h2>
+            <div class="card-container">
+
+                <div class="card">
+                    <img src="static/images/img15.webp">
+                  <h3> IND vs AUS:</h3>
+                  <p>Short
+                  Linda Yaccarino is facing pressure to cut costs and boost revenue at X.
+                  This has led to <br>significant changes.
+                  Joe Benarroch, a key figure in Yaccarino's team, was recently laid off.
+                <br>More than a year ago, Linda Yaccarino took charge as X (earlier called Twitter) CEO and has often <br>made headlines. Upon her appointment as the new CEO of X, Yaccarino had expressed excitement <br>over her new project and had said that he was an inspirational figure for her. However, a Financial<br>Times report now says that Yaccarino is being pressurised into cutting costs and boosting revenue<br> at X.
+                The report says that Yaccarino has recently made bold moves within her executive team as result<br> of the pressure from Musk. This strategic shake-up includes the dismissal of Joe Benarroch, her right<br>-hand man and the head of business operations and communications, according to sources familiar<br> with the matter.</p>
+                </div>
+
+                <div class="card">
+                    <img src="static/images/img17.jpg">
+                  <h3>Shopify launches AI chatbot <br>Sidekick</h3>
+                  <p>Shopify is launching its new <br>AI chatbot, ‘Sidekick,’ in early .................<br></p>
+                </div>
+                 
+                
+                <div class="card">
+                    <img src="static/images/img13.avif" alt="">
+                  <h3></h3>
+                  <p>Meta Training its AI <br>Chatbot On User Data, But <br>There Is a Way To Restrict Its Access</p>
+                </div>
+
+                <div class="card">
+                    <img src="static/images/img19.jpg" alt="">
+                  <h3></h3>
+                  <p>Apple back-to-school sale 2024 in India: <br>Discounts on iPad, MacBook and free<br> AirPods and Apple Pencil</p>
+                </div>
+                
+            
+                <div class="card">
+                    <img src="static/images/img16.avif" alt="">
+                  <h3></h3>
+                  <p>Amazon plots AI revamp for unprofitable<br> Alexa service and paid subscription</p>
+                </div>
+
+            <div class="newsBox">
+            </div>
+</div>
+</div > 
+    </div>        
+
+</div>
+
+<div class="footer">
+<diz class="box">
+    <div class="left">
+        <div class="categories">
+            <p>Categories</p>
+            <div>
+                <p>Sports</p>
+            </div>
+            <div>
+                <p>Business</p>
+            </div>
+            <div>
+                <p>Technology</p>
+            </div>
+        </div>
+        <div class="contactUs">
+            <div class="contact">
+                <p>Contact Us</p>
+                <div>Phone No. - <span>9Xxxxxxxxx</span></div>
+                <div>Email - <span>abc@gmail.com</span></div>
+                <div>Address - <span>Mumbai, India</span></div>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="newsletter">
+            <p>Subscribe to Our Newsletter</p>
+            <div class="email">
+                <input type="email" placeholder="Enter Your Email Here">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </div>
+    <div class="copyrights">
+       </div>
+</div>
+</body>
+</html>
+          
+        
+
+

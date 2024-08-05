@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="static/common_style.css">
+  <style>
+    body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Basic styling */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #ae2896, #509bf5);
+    align-items: center;
+  }
+  
+  .h1{
+    font-size: small;
+    font-weight: 150px;
+    text-align: center;
+    margin-left: 500px;
+  }
+  
+  main {
+    padding: 20px;
+    align-items: center;
+    display: inline-block;
+    background-color:  linear-gradient(to right, #ae2896, #509bf5);;
+    color: white;
+
+  }
+
+  
+  section {
+    margin-bottom: 40px;
+    background: linear-gradient(to right, #ae2896, #509bf5);
+   
+  }
+.img{
+    width:200px;
+    height: 240px;
+    display: inline-block;
+   align-items: center;
+   justify-content: center;
+   margin-left: 520px;background: linear-gradient(to right, #ae2896, #509bf5);
+    
+}
+  .music{
+    background: linear-gradient(to right, #ae2896, #509bf5);
+    color: white;
+    font-weight: 100px;
+    
+  }
+  .music-container {
+    display: flex;
+    align-items: start;
+   
+    color: white;
+    margin-left: 100px;
+    font-weight: 40px;
+    font-size: small;
+    margin-top: 20px;
+    position: relative;display: flex;
+    flex-wrap: wrap; /* Vertically center items */
+  }
+  
+  .music-container h2 {
+    margin-right: 20px;
+     /* Add space between heading and audio player */
+  }
+  
+  .audio-player {
+    flex-grow: 1; /* Allow audio player to take remaining space */
+  }
+  
+  .audio-player audio {
+    width: 100%;
+    margin-left: 550px;
+    position: relative; /* Make audio player fill its container */
+  }
+  .h2{
+  font-size: small;
+  font-weight: 200px;
+
+  }
+ .music-container1{
+    margin-bottom: 20px;
+    position: relative;
+ }
+ 
+  
+  .music-item {
+    flex: 0 0 50%; /* Each item takes up half of the container width */
+    padding: 10px; /* Add space between items */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+ 
+.block{
+  position: relative;
+  left: 30px;
+  top: 50px;
+}
+ .lyrics{
+  align-items: center;
+  margin-left: 400px;
+  margin-top: 80px;
+ } 
+  </style>
+</head>
+<body>
+    <main>
+        <img src="static/images/movie2.jpg" class="img">
+        <h1 class="h1">Oy!<br>2009.Telugu album.Yuvan Shakar Raja</h1>
+    </main>
+    <div class="music-container">
+    <div class="music-container1">
+    <div class="block">
+        <h1 class="h2">Oy....Oy</h1>
+        <p1>Sidharth,Prasanthi-oy!</p1>
+    </div>
+    <div class="audio-player">
+        <audio  src="static/files/01 - Oy! Oy!.mp3" controls  loop >
+        <source src="songs/song1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+</div>
+<div class="music-container1">
+    <div class="block">
+        <h1 class="h2">Saradaga..Chandamaamane</h1>
+        <p1>Karthik,Sunidhi Chauhan-oy!</p1>
+    </div>
+    <div class="audio-player">
+
+    <audio  src="static/files/02 - Saradaga.mp3" controls  loop >
+        <source src="songs/song1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+</div>
+
+<div class="music-container1">
+    <div class="block">
+        <h1 class="h2">Waiting for you</h1>
+        <p1>KK-oy!</p1>
+    </div>
+    <div class="audio-player">
+
+    <audio  src="static/files/03 - Waiting For You.mp3" controls  loop >
+        <source src="songs/song1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+</div>
+
+<div class="music-container1">
+    <div class="block">
+        <h1 class="h2">Anukoledenadu</h1>
+        <p1>ShreyaGoshal,Shwetha Pandit-Oy!</p1>
+    </div>
+    <div class="audio-player">
+
+    <audio  src="static/files/04 - Anukoledenadu.mp3" controls  loop >
+        <source src="songs/song1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+</div>
+<div class="music-container1">
+    <div class="block">
+        <h1 class="h2">Povodhe Prema</h1>
+    <p1>Yuvan Shankar Raja-Oy!</p1>
+    </div>
+    <div class="audio-player">
+
+    <audio  src="static/files/05 - Povodhe Prema.mp3" controls  loop >
+        <source src="songs/song1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+</div>
+<div class="music-container1">
+    <div class="block">
+        <h1 class="h2">Sehri...sehri</h1>
+    <p1>ToshiSabri,Priya-Oy!</p1>
+    </div>
+    <div class="audio-player">
+
+    <audio  src="static/files/06 - Seheri.mp3" controls  loop >
+        <source src="songs/song1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+</div>
+
+
+
+</div>
+</body>
+</html>

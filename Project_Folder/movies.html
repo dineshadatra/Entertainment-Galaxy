@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Movies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="static/Css/Movies.css"> -->
+  <link rel="stylesheet" href="static/movies.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- Owl Carousel css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- Owl Carousel css-->
+
+
+
+  <!-- jquery css-->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!-- jquery css-->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #161616;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /*---------global------*/
+    .container {
+      max-width: 95%;
+      margin: auto;
+    }
+
+    a {
+      text-decoration: none;
+      transition: 0.5s;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex1 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    i {
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    /*---------global------*/
+    /*---------header------*/
+    .home {
+      color: white;
+      background-image: url("../image/home.jpg");
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .logo img {
+      width: 250px;
+      margin-top: 10px;
+    }
+
+    .headerbg {
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(to right, rgba(34, 31, 31, 1) 0%, rgba(34, 31, 31, 0.4) 100%)
+    }
+
+    header {
+      height: 10vh;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    header .navbar {
+      align-items: center;
+      transition: 0.5s;
+    }
+
+    header nav ul {
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    header nav ul li a {
+      color: white;
+      transition: all 300ms ease-in-out;
+    }
+
+    header nav ul li a:hover {
+      color: #E50916;
+    }
+
+    header nav ul li {
+      margin-right: 20px;
+      display: inline-block;
+    }
+
+    header .navbar span {
+      text-align: center;
+      margin-left: 20px;
+      color: black;
+      font-size: 25px;
+      display: none;
+    }
+
+    .subscribe i:nth-child(1) {
+      margin-top: 17px;
+    }
+
+    .subscribe i {
+      font-size: 20px;
+      margin-right: 20px;
+    }
+
+    #palybtn {
+      background: #E50916;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    button {
+      background: #E50916;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 0px 30px;
+      cursor: pointer;
+    }
+
+    .subscribe button {
+      margin-left: 15px;
+    }
+
+    header.sticky .headerbg {
+      position: relative;
+    }
+
+    header.sticky {
+      z-index: 10;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      transition: 0.5s;
+      height: 10vh;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+      transition: 0.5s;
+    }
+
+    header.sticky .subscribe {
+      display: none;
+    }
+
+    @media only screen and (max-width:768px) {
+      header nav ul {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background: #000;
+        overflow: hidden;
+        transition: max-height 0.5s;
+        z-index: 100;
+      }
+
+      header nav ul li {
+        display: block;
+        margin: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      header .navbar span {
+        color: white;
+        display: block;
+        cursor: pointer;
+      }
+
+      .home {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+      }
+
+      .subscribe {
+        display: none;
+      }
+    }
+
+    /*---------home_content------*/
+    .left,
+    .right {
+      width: 50%;
+    }
+
+    .top {
+      margin-top: 10%
+    }
+
+    .mtop {
+      margin-top: 5%
+    }
+
+    h1 {
+      font-size: 80px;
+      letter-spacing: 2px;
+      line-height: 90px;
+      text-transform: uppercase;
+    }
+
+    .time {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      line-height: 40px;
+    }
+
+    .time label {
+      width: 40px;
+      height: 40px;
+      border: 1px solid white;
+      text-align: center;
+      line-height: 40px;
+    }
+
+    .time i {
+      font-size: 5px;
+      line-height: 40px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .home_content p {
+      font-size: 20px;
+      line-height: 35px;
+    }
+
+    .btn {
+      padding: 20px 40px;
+      margin-right: 20px;
+    }
+
+    .home_content #palybtn {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      background: white;
+      color: #E50916;
+    }
+
+    .button {
+      margin-top: 30px;
+    }
+
+    .button p {
+      margin-top: 12px;
+      margin-left: 20px;
+      font-size: 18px;
+    }
+
+    /*---------header------*/
+    /*---------popular------*/
+    .heading h2 {
+      font-size: 25px;
+      font-weight: 400;
+      color: white;
+    }
+
+    .heading {
+      margin-bottom: 30px;
+    }
+
+    .heading button {
+      padding: 15px 50px;
+    }
+
+    .popular {
+      color: white;
+    }
+
+    /*---------image_hover------*/
+    .popular .box {
+      position: relative;
+      background: #221F1F;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .popular .box .imgBox {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .popular .box .imgBox img {
+      width: 100%;
+      height: 100%;
+      transition: 0.5s;
+    }
+
+    .popular .box:hover .imgBox img {
+      opacity: .6;
+      transform: scale(1.2);
+    }
+
+    .popular .box .content {
+      position: absolute;
+      width: 100%;
+      top: 30%;
+      left: 40%;
+      z-index: 2;
+    }
+
+    .popular .box .content i {
+      transition: 0.5s;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .popular .box:hover .content i {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popular #palybtn {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+    }
+
+    /*----icon------*/
+    .popular .icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    .popular .icon i {
+      font-size: 20px;
+      margin: 10px;
+    }
+
+    /*----text------*/
+    .popular .text {
+      padding: 20px;
+    }
+
+    .popular .time {
+      margin: 0;
+    }
+
+    .popular .time a {
+      color: #E50916;
+    }
+
+    .owl-s .dots span {
+      font-size: 20px;
+      color: white;
+    }
+
+    .owl-nav span {
+      font-size: 50px;
+      color: white;
+    }
+
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      top: 25%;
+    }
+
+    .owl-prev {
+      left: -20px;
+    }
+
+    .owl-next {
+      right: -20px;
+    }
+
+    /*---------popular------*/
+    /*---------new_realase------*/
+    .new_realase {
+      color: white;
+    }
+
+    .heading h2 {
+      margin-bottom: 20px;
+    }
+
+    .heading h2 span {
+      border-left: 3px solid #E50916;
+      margin-right: 30px;
+      font-weight: bold;
+    }
+
+    .time h3 {
+      font-size: 50px;
+    }
+
+    .new_realase .time img {
+      width: 60px !important;
+      height: 60px;
+      margin-top: -10px;
+      margin-right: 10px;
+    }
+
+    .new_realase .items {
+      border-left: 3px solid #E50916;
+      padding: 40px;
+      height: 85vh;
+    }
+
+    .new_realase .img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0;
+      z-index: -1;
+    }
+
+    .new_realase .items {
+      width: 100%;
+      background: linear-gradient(to right, rgba(34, 31, 31, 1) 0%, rgba(34, 31, 31, 0.4) 100%)
+    }
+
+    .new_realase p {
+      font-size: 18px;
+      line-height: 35px;
+    }
+
+    /*---------new_realase------*/
+    /*---------footer------*/
+    footer {
+      background: #221F1F;
+      color: white;
+    }
+
+    footer .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 30px;
+    }
+
+    footer .box {
+      margin-top: 50px;
+    }
+
+    footer .box i {
+      margin-right: 20px;
+      font-size: 30px;
+    }
+
+    footer h2 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    footer ul li {
+      margin-bottom: 15px;
+      opacity: 0.7;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    footer ul li::before {
+      content: "\2022";
+      color: red;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+
+    footer .ul {
+      margin-left: 50px;
+    }
+
+    footer p {
+      margin-bottom: 20px;
+      opacity: 0.7;
+      line-height: 30px;
+    }
+
+    footer .img img {
+      margin: 5px;
+      width: auto;
+      height: auto;
+    }
+
+    footer .box li:hover,
+    footer .box i:hover {
+      color: #E50916;
+    }
+
+    .legal {
+      text-align: center;
+      background: #E50916;
+      padding: 20px;
+      margin: 0;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    /*---------footer------*/
+    @media only screen and (max-width:768px) {
+      .left {
+        width: 100%;
+      }
+
+      .new_realase .items {
+        height: 65vh;
+      }
+
+      footer .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media only screen and (max-width:511px) {
+      header nav ul {
+        top: 70px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .time p {
+        margin-top: 10px;
+      }
+
+      .left p {
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .time button {
+        padding: 5px 10px;
+      }
+
+      .heading {
+        margin-top: 50px;
+      }
+
+      .owl-prev {
+        left: 20px;
+      }
+
+      .owl-next {
+        right: 20px;
+      }
+
+      .new_realase .items {
+        height: 80vh;
+      }
+
+      .new_realase .button button {
+        padding: 10px;
+      }
+
+      .new_realase .time label,
+      .new_realase .time img,
+      .new_realase .time p {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+
+      .new_realase .time button {
+        display: none;
+      }
+
+      .new_realase .time i {
+        display: none;
+      }
+
+      footer .container {
+        padding: 10px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      footer .img img {
+        width: 150px;
+      }
+    }
+    embed{
+      position: relative;
+      top: 30px;
+    }
+  </style>
+
+
+<style>
+  /* Initially hide the embed tag */
+.imgBox embed {
+  display: none;
+}
+
+/* Ensure the image is displayed initially */
+.imgBox img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* When hovering over the image box, show the embed tag and hide the image */
+.imgBox:hover embed {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.imgBox:hover img {
+  display: none;
+}
+.imgBox:hover .content i{
+  opacity: 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="container ">
+      <div class="navbar flex1">
+        <div class="logo">
+          <img src="static/images/movies_logo.png" alt="">
+        </div>
+
+        <nav>
+          <ul id="menuitem">
+            <li><a href="home">HOME</a></li>
+            <li><a href="Movies">MOVIES</a></li>
+            <li><a href="Trailers">TRAILERS</a></li>
+            <li><a href="Songs">SONGS</a></li>
+            <li><a href="Stories">STORIES</a></li>
+            <li><a href="News">NEWS</a></li>
+            <li><a href="">GAMES</a></li>
+          </ul>
+        </nav>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+
+        <div class="subscribe flex">
+          <i class="fas fa-search"></i>
+          <i id="palybtn" class="fas fa-user"></i>
+        </div>
+      </div>
+  </header>
+
+  <script>
+    var menuitem = document.getElementById("menuitem");
+    menuitem.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (menuitem.style.maxHeight == '0px') {
+        menuitem.style.maxHeight = "200px"
+      } else {
+        menuitem.style.maxHeight = "0px"
+      }
+    }
+
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 50);
+    })
+  </script>
+
+
+
+  <section class="popular mtop">
+    <div class="container ">
+      <div class="heading flex1">
+        <h2>Recent Hits</h2>
+
+      </div>
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/VTYi8VajodY" type=""></embed>
+              <img src="static/images/Aadi_Keshava.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>Aadi Keshava</h3>
+              <div class="time flex">
+                <span>2hrs 5mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/qlqcTX9s6hg" type=""></embed>
+              <img src="static/images/Movie_Posters/Dhamaka.jpg" alt="">
+              <div class="icon">
+                <i class="far farr fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>Dhamaka</h3>
+              <div class="time flex">
+                <span>2hrs 24mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/HSaQoVOFS1U" type=""></embed>
+              <img src="static/images/Movie_Posters/The_Black_Hole.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>The Black Hole</h3>
+              <div class="time flex">
+                <span>1hrs 51mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Science Fiction</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/3LSSB1hiriM" type=""></embed>
+              <img src="static/images/Movie_Posters/Sky_Fall_007.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>SkyFall 007</h3>
+              <div class="time flex">
+                <span>2hrs 28mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/uPeRKmVJtsU" type=""></embed>
+              <img src="static/images/Movie_Posters/MAD.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>MAD </h3>
+              <div class="time flex">
+                <span>1hrs 46mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/tP8lv69o8Tw" type=""></embed>
+              <img src="static/images/Movie_Posters/The_Nun.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>The Nun</h3>
+              <div class="time flex">
+                <span>1hrs 24mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Horror</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/S2OxtL4U0K0&t=1s" type=""></embed>
+              <img src="static/images/Movie_Posters/The_Warrior.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>The Warrior</h3>
+              <div class="time flex">
+                <span>2hrs 13mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="popular mtop">
+    <div class="container ">
+      <div class="heading flex1">
+        <h2>HORROR</h2>
+
+      </div>
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/tP8lv69o8Tw" type=""></embed>
+              <img src="static/images/Movie_Posters/The_Nun.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>The Nun</h3>
+              <div class="time flex">
+                <span>1hrs 24mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/ATi3GdospAo" type=""></embed>
+              <img src="static/images//Movie_Posters/The_Child_Remains.jpeg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>The Child Remains</h3>
+              <div class="time flex">
+                <span>1hrs 46mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/2cmWeX31HGo" type=""></embed>
+              <img src="static/images/Movie_Posters/The_Shattering.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>The Shattering</h3>
+              <div class="time flex">
+                <span>1hrs 09mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/0bEZ1NhcCOc" type=""></embed>
+              <img src="static/images/Movie_Posters/Arundathi.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>Arundathi</h3>
+              <div class="time flex">
+                <span>2hrs 11mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/XCf7VRide0M" type=""></embed>
+              <img src="static/images/Movie_Posters/Spirit Trap.jpeg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>Spirit Trap </h3>
+              <div class="time flex">
+                <span>1hrs 25mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Owl Carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+  <!-- Owl Carousel -->
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: true,
+      dots: false,
+      responsive: {
+        411: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  </script>
+
+
+
+
+
+
+  <section class="new_realase top">
+    <div class="container">
+      <div class="owl-carousel owl-carousel2 owl-theme">
+        <div class="items">
+          <div class="left">
+            <div class="img">
+              <img src="static/images/Movie_Posters/The_Gods.jpg" alt="">
+            </div>
+            <div class="heading">
+              <h2> <span></span> UPCOMING RELEASE</h2>
+              <h1>THE GODS</h1>
+            </div>
+            <div class="time flex">
+              <label>R</label>
+              <i class="fas fa-circle"></i>
+              <span>1hrs 40mins</span>
+              <i class="fas fa-circle"></i>
+              <a class="flex1"><img src="https://img.icons8.com/color/95/000000/imdb.png" /> 8.5</a>
+              <i class="fas fa-circle"></i>
+              <p>2021</p>
+              <i class="fas fa-circle"></i>
+              <button>ACTION</button>
+            </div>
+
+            <p>The Gods is a modern day Romeo and Juliet, where Mikey James, a street hustler raised on the streets with
+              his two brothers,
+              goes to work for the Fasano family, as he desperately tries to find a way out of his hustling life style.
+              Mikey James has
+              always been in love with the Mob bosses beautiful daughter, Sofia Fasano. Now he begins his move to
+              capture her heart.
+              Despite the sworn contempt between the two families, Mikey and Sofia wed in secrete.
+            </p>
+
+            <!-- <div class="button flex">
+              <button class="btn">PLAY NOW</button>
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+              <p>WATCH TRAILER</p>
+            </div> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $('.owl-carousel2').owlCarousel({
+      loop: true,
+      margin: 20,
+      dots: true,
+      items: 1
+    })
+  </script>
+
+
+
+  <section class="popular mtop">
+    <div class="container ">
+      <div class="heading flex1">
+        <h2>Powerful Crime Thrillers</h2>
+        <button>MORE VIDEO</button>
+      </div>
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/pYQ0BwvyUvw" type=""></embed>
+              <img src="static/images/Movie_Posters/Forensic.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>Forensic</h3>
+              <div class="time flex">
+                <span>2hrs 12mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/AKDmlrUAZoE" type=""></embed>
+              <img src="static/images/Movie_Posters/CodeM.webp" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>Code M</h3>
+              <div class="time flex">
+                <span>2hrs 14mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/A77rGW61mFI" type=""></embed>
+              <img src="static/images/Movie_Posters/Dhruva.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>Dhruva</h3>
+              <div class="time flex">
+                <span>2hrs 18mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/JfUBB6NFdi0" type=""></embed>
+              <img src="static/images/Movie_Posters/The_Employer.jpg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>The Employer</h3>
+              <div class="time flex">
+                <span>1hrs 26mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box">
+            <div class="imgBox">
+              <embed src="https://www.youtube.com/embed/vYTA4AdwyU0" type=""></embed>
+              <img src="static/images/Movie_Posters/Bluff.jpeg" alt="">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <!-- <i id="palybtn" class="fas fa-play"></i> -->
+            </div>
+            <div class="text">
+              <h3>Bluff </h3>
+              <div class="time flex">
+                <span>1hrs 54mins</span>
+                <i class="fas fa-circle"></i>
+                <a>Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- paxi mate ko lai aata hai-->
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: true,
+      dots: false,
+      responsive: {
+        414: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  </script>
+  <footer>
+    <p class="legal"> </p>
+  </footer>
+  <div class="loader"></div>
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Gaming Website</title>
+    <style>
+        /* styles.css */
+
+        /* Global Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fc5c7d, #6a82fb, #05dfd7);
+            color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            transition: background-color 0.3s, padding 0.3s;
+        }
+
+        header:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 25px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: font-size 0.3s, letter-spacing 0.3s;
+        }
+
+        header:hover h1 {
+            font-size: 2.2em;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            color: #f4f4f4;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffbd39;
+            background-color: rgba(255, 189, 57, 0.1);
+            border-color: #ffbd39;
+            transform: scale(1.05);
+        }
+
+        /* Game Styles */
+        .games-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .game {
+            margin: 20px;
+            flex-basis: calc(33.333% - 40px);
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .game:nth-child(even) {
+            background-color: rgba(51, 51, 51, 0.7);
+        }
+
+        .game:hover {
+            transform: translateY(-10px);
+            background-color: rgba(51, 51, 51, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .game img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .game img:hover {
+            transform: scale(1.1);
+        }
+
+        .game-info {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .game-info h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .game-info p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+
+        .game-info form {
+            display: inline-block;
+        }
+
+        .game-info button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .game-info button:hover {
+            background-color: #ffbd39;
+            transform: scale(1.05);
+        }
+
+        /* Contact and Footer Styles */
+        #contact {
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            .game {
+                flex-basis: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .game {
+                flex-basis: calc(100% - 40px);
+            }
+
+            footer {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Python Gaming</h1>
+        <nav>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to our Python gaming website. We offer a variety of Python-based games for your entertainment.
+            </p>
+        </div>
+    </section>
+
+    <section id="games">
+        <div class="container">
+            <h2>Our Games</h2>
+            <div class="games-grid">
+
+                <div class="game game-container" data-game-name=game1>
+                    <img src="static/Games/2048.png" alt="Game 1">
+                    <div class="game-info">
+                        <h3>2048</h3>
+                        <p>
+                            2048 is a single-player sliding block puzzle game. Players combine numbered tiles on a 4x4
+                            grid to reach the tile with the number 2048.
+                            The game ends when no more moves are possible.</p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+
+                <!-- Game 2 -->
+                <div class="game game-container" data-game-name=game2>
+                    <img src="static/Games/Balloonshooter.png" alt="Game 2">
+                    <div class="game-info">
+                        <h3>Balloon Shooter</h3>
+                        <p>Balloon Shooter is an arcade game where players pop moving balloons to score points before
+                            time runs out.</p>
+                        <button>Play Now</button>
+                    </div>
+                </div>
+
+                <!-- Game 3 -->
+                <div class="game game-container" data-game-name=game3>
+                    <img src="static/Games/snake.png" alt="Game 3">
+                    <div class="game-info">
+                        <h3>Snake Game</h3>
+                        <p>The Snake game is a classic arcade where players control a growing snake, eating pellets to
+                            score points while avoiding collisions.</p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+                <div class="game game-container" data-game-name=game4>
+                    <img src="static/Games/wordsearch.png" alt="Game 4">
+                    <div class="game-info">
+                        <h3>Word Search Game</h3>
+                        <p>Word Search is a puzzle game where players find hidden words in a grid of letters arranged in
+                            various directions.
+                            The goal is to locate all specified words from a list within the grid.</p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+                <div class="game game-container" data-game-name=game5>
+                    <img src="static/Games/pong.png" alt="Game 5">
+                    <div class="game-info">
+                        <h3>Pong Game</h3>
+                        <p>Pong is one of the earliest arcade video games, created by Atari and released in 1972. It is
+                            a table tennis sports game featuring simple two-dimensional graphics</p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+                <div class="game game-container" data-game-name=game6>
+                    <img src="static/Games/quiz.png" alt="Game 6">
+                    <div class="game-info">
+                        <h3>Quiz Game</h3>
+                        <p> A quiz game is a type of interactive game where players are presented with questions and
+                            have to select the correct answers from a list of choices. </p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+                <div class="game game-container" data-game-name=brick_breaker>
+                    <img src="static/Games/Breakout.png" alt="Game 7">
+                    <div class="game-info">
+                        <h3>Break Out</h3>
+                        <p> Breakout is a classic arcade game where players use a paddle to bounce a ball, breaking
+                            bricks to score points.
+                            The goal is to clear all bricks on the screen without letting the ball fall off the paddle.
+                        </p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+                <div class="game game-container" data-game-name=connect>
+                    <img src="static/Games/Tictactoe.png" alt="Game 8">
+                    <div class="game-info">
+                        <h3>Tic_Tac_Toe</h3>
+                        <p>Tic Tac Toe is a two-player game where opponents aim to align three of their symbols (X or O)
+                            in a row to win. </p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+                <div class="game game-container" data-game-name=mines>
+                    <img src="static/Games/mines.jpg" alt="Game 9">
+                    <div class="game-info">
+                        <h3>Mines</h3>
+                        <p>
+                            Minesweeper is a classic logic-based computer game where players uncover squares on a grid
+                            without detonating hidden mines. The numbers revealed help players deduce the locations of
+                            mines, requiring careful strategy and logical thinking.
+                        </p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+
+
+                <div class="game game-container" data-game-name=guess_the_word>
+                    <img src="static/Games/Guess_word.png" alt="Game 11">
+                    <div class="game-info">
+                        <h3>Guess The Word</h3>
+                        <p>Guess the Word is a challenging puzzle game where players deduce a hidden word by guessing
+                            letters within a limited number of attempts.</p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+                <div class="game game-container" data-game-name=sudoku>
+                    <img src="static/Games/sudoku.jpeg" alt="Sudoku">
+                    <div class="game-info">
+                        <h3>Sudoku </h3>
+                        <p> Sudoku is a logic-based number puzzle where players fill a 9x9 grid so that each column,
+                            row, and 3x3 subgrid contains all digits from 1 to 9.
+                            The game enhances problem-solving skills and offers varying levels of difficulty.
+                        </p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+                <div class="game game-container" data-game-name=maze>
+                    <img src="static/Games/maze.jpg" alt="Maze">
+                    <div class="game-info">
+                        <h3>Maze Game</h3>
+                        <p> Maze is a puzzle game where players navigate through a complex network of paths or passages
+                            to find an exit.
+                            It challenges problem-solving skills and spatial awareness as players encounter dead ends
+                            and false routes.
+                        </p>
+                        <button type="submit">Play Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us.</p>
+            <p>Email:TEAME@example.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Python Gaming. All rights reserved.</p>
+    </footer>
+
+    {% if result %}
+    <div class="output">
+        <h2>Game Output:</h2>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gameContainers = document.querySelectorAll('.game-container');
+            gameContainers.forEach(container => {
+                container.addEventListener('click', () => {
+                    const gameName = container.getAttribute('data-game-name');
+                    fetch(`/launch_game/${gameName}/`, {
+                        method: 'GET',
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === 'success') {
+                                alert(`${gameName} is launching!`);
+                            } else {
+                                alert(`Error: ${data.message}`);
+                            }
+                        })
+                        .catch(error => {
+                            alert('An error occurred while launching the game.');
+                        });
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
