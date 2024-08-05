@@ -1,0 +1,69 @@
+*{
+    font-family: Poppins;
+}
+
+body{
+    background-image: url("HorrorBg.jpg");
+    background-size: contain;
+}
+
+.containe{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card{
+    height: 40%;
+    width: 22.5%;
+    margin: 40px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+
+img{
+    height: 35vh;
+    width: 23vw;
+    border-radius: 3px;
+}
+
+.intro{
+    height: 200px;
+    width: 350px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 70%;
+    color: white;
+    transition: .5s;
+}
+
+h1{
+    margin: 10px;
+    font-size: 40px;
+}
+
+p{
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+.card:hover{
+    cursor: pointer;
+}
+
+.card:hover .intro{
+    height: 220px;
+    bottom: 240px;
+    background: black;
+}
+
+.card:hover p{
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover img{
+    transform:scale(1.1) rotate(-3deg) ;
+}

@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: #00ABE4;
+}
+body{
+    overflow-x: hidden;
+    color: #2272FF;
+}
+section{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+    background-color: #fcb900;
+    height: 10%;
+}
+.part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:50px
+}
+nav h1{
+    font-size: 40px;
+    color: black;
+    margin-top: 10px;
+}
+nav h4{
+    font-size: 20px;
+    font-weight: 500;
+}
+.center{
+    padding-left: 100px;
+    height: 75%;
+    width: 100%;
+    display: flex;
+}
+.center-part1{
+    height: 100%;
+    width: 40%;
+}
+
+.center-part1 h1{
+    margin-top: 20px;
+    font-size: 50px;
+}
+.center-part1 p{
+    margin-top: 50px;
+    font-size: 20px;
+}
+.center-part2 img{
+    height: 65%;
+    position: absolute;
+    padding: 30px 120px;
+}
+
+.section1bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 120px;
+}
+
+.section2 p{
+    padding: 40px 120px;
+    display: flex;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    padding: 40px 120px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.elem{
+    flex-shrink: 0;
+    height: 300px;
+    width: 45%;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0px 15px 0px black;
+    display: flex;
+}
+.elem-part1{
+    position: relative;
+    bottom: 40px;
+}
+.elem-part1 h3{
+    font-size: 20px;
+}
+
+.elem-part2{
+    height: 100%;
+    width: 100%;
+}
+.elem-part2 img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    right: 30px;
+}
+
+.center-part2{
+    padding-left: 70px;
+    height: 100%;
+    width: 60%;
+}
+
+
+
+.typing-animation {
+    font-family: Poppins;
+    font-size: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #fcb900; /* Cursor */
+    animation: blink-caret 0.75s step-end infinite;
+    margin-top: 10px;
+}
+
+/* Cursor blink effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fcb900; }
+}
+
+
+
+.hover-trigger1 {
+    cursor: pointer;
+}
+.hover-trigger2 {
+    cursor: pointer;
+}
+.hover-trigger3 {
+    cursor: pointer;
+}
+.hover-trigger4 {
+    cursor: pointer;
+}
+.hover-trigger5 {
+    cursor: pointer;
+}
+.hover-trigger6 {
+    cursor: pointer;
+}
+
+
+
